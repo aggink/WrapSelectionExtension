@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+
+  <Commands package="guidWrapSelectionExtensionPackage">
+    <Groups>
+      <Group guid="guidWrapSelectionExtensionPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
+      </Group>
+    </Groups>
+	  
+    <Buttons>
+		<Button guid="guidWrapSelectionExtensionPackageCmdSet" id="WrapSelectionCommandId" priority="0x0100" type="Button">
+			<Parent guid="guidWrapSelectionExtensionPackageCmdSet" id="MyMenuGroup"/>
+			<Icon guid="guidImages" id="bmpPic1" />
+			<Strings>
+				<ButtonText>Wrap Selection</ButtonText>
+			</Strings>
+		</Button>
+    </Buttons>
+	  
+    <Bitmaps>
+      <Bitmap guid="guidImages" href="Resources\WrapSelectionCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough"/>
+    </Bitmaps>
+  </Commands>
+
+  <KeyBindings>
+	  <KeyBinding guid="guidWrapSelectionExtensionPackageCmdSet" id="WrapSelectionCommandId" editor="guidVSStd97" key1="W" mod1="ALT" />
+  </KeyBindings>
+
+  <Symbols>
+    <!-- This is the package guid. -->
+    <GuidSymbol name="guidWrapSelectionExtensionPackage" value="{48c013b0-faa6-4b9d-beb1-a5fb09add73b}" />
+
+    <!-- This is the guid used to group the menu commands together -->
+    <GuidSymbol name="guidWrapSelectionExtensionPackageCmdSet" value="{52d81c01-7518-4636-b842-fb67fedda40a}">
+      <IDSymbol name="MyMenuGroup" value="0x1020" />
+      <IDSymbol name="WrapSelectionCommandId" value="0x0100" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImages" value="{dfc87350-4910-4237-9411-2f2d831a4b9f}" >
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
